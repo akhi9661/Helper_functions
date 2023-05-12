@@ -14,7 +14,7 @@ def convolve(folder, inp_name):
     
     kernel = np.ones((3, 3))/(9)
     aod_convolved = convolve2d(img, kernel, mode = 'valid')
-    with (rasterio.open)((os.path.join(opf, 'Jaipur_' + inp_name)), 'w', **param) as (w):
+    with (rasterio.open)((os.path.join(opf, inp_name)), 'w', **param) as (w):
         w.write(aod_convolved, 1)
     
     return 'Done'
