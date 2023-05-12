@@ -1,2 +1,5 @@
 # Helper_functions
-Just a list of python functions to help with common raster processing.
+List of python functions to help with common raster processing.
+
+-------
+Note: Continuously updated.
