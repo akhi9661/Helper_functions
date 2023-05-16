@@ -11,6 +11,7 @@ def resample_raster(inpf, inp_name, resolution, verbose = True):
         inpf (str): Input folder path containing the raster files.
         inp_name (str): Input raster file name.
         resolution (float): Desired resolution in meters.
+        verbose (bool): If True, prints the processing status. Default is True.
 
     Returns:
         opf (str): Output folder path containing the resampled raster files.
@@ -48,4 +49,4 @@ cell_size = float(input('Enter the output cell size [in m, if CRS is UTM, else d
 gtif = list(filter(lambda x: x.endswith(('tif', 'TIF', 'tiff', 'img', 'jp2')), os.listdir(inpf)))
 for inp_name in gtif:
     resample_raster(inpf, inp_name, cell_size)
-print('\nDone.')
+print('Done.')
