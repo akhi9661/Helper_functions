@@ -5,6 +5,7 @@ List of python functions to help with common raster processing.
 
 - Convolution
 - Extract multi points to excel
+- Resampling
 
 -------
 Note: Continuously updated.
