@@ -1,4 +1,4 @@
-import os, pandas as pd, rioxarray as rxr, geopandas as gpd, earthpy.plot as ep, rasterstats as rs
+import os, shutil, pandas as pd, rioxarray as rxr, geopandas as gpd, earthpy.plot as ep, rasterstats as rs
 from pylab import *
 
 def extract_sr(rast_path, rast_name, shp_filename, out_df):
