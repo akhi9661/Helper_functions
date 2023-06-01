@@ -111,11 +111,11 @@ def main(rast_path, shp_filename, variable = 'GPM_3IMERGHHL_06_precipitationCal'
     '''
     
     out_df = pd.DataFrame()
-
+    print('\nProcess: Converting NetCDF to GeoTIFF\n')
     file_list = list(filter(lambda x: x.endswith(('nc', 'NC')), os.listdir(rast_path)))
     for file in file_list:
         opf = nc2tiff(rast_path, file, variable = variable)
-    
+    print('\nProcess: Extracting multi-points \n')
     file_tiff = list(filter(lambda x: x.endswith(("TIF")), os.listdir(opf)))
     for gtif in file_tiff:
         src_rast, pts_crs, out_df, output_path = extract_sr(rast_path, opf, gtif, shp_filename, out_df)
