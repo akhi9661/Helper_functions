@@ -8,6 +8,7 @@ List of python functions to help with common raster processing.
 - Extract multi points from NetCDF to excel
 - Resampling
 - Combine multiple plots into one
+- Mosaic rasters
 
 -------
 Note: Continuously updated.
