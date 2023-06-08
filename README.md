@@ -7,6 +7,7 @@ List of python functions to help with common raster processing.
 - Extract multi points from raster (TIF, IMG, JP2) to excel
 - Extract multi points from NetCDF to excel
 - Resampling
+- Combine multiple plots into one
 
 -------
 Note: Continuously updated.
