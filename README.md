@@ -9,6 +9,7 @@ List of python functions to help with common raster processing.
 - Resampling
 - Combine multiple plots into one
 - Mosaic rasters
+- Kriging
 
 -------
 Note: Continuously updated.
