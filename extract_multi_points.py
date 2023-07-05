@@ -4,6 +4,7 @@ import pandas as pd
 import geopandas as gpd
 import rasterio
 from rasterio.mask import mask
+import numpy as np
 
 def extract_sr(rast_path, rast_name, shp_filename, out_df):
     print('Processing:', rast_name)
