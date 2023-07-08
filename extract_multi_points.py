@@ -6,8 +6,10 @@ import rasterio
 from rasterio.mask import mask
 import numpy as np
 
-def extract_sr(rast_path, rast_name, shp_filename, out_df):
-    print('Processing:', rast_name)
+def extract_sr(rast_path, rast_name, shp_filename, out_df, verbose = True):
+    
+    if verbose:
+        print('Processing:', rast_name)
     src_filename = os.path.join(rast_path, rast_name)
 
     # Read the raster file
@@ -32,19 +34,17 @@ def extract_sr(rast_path, rast_name, shp_filename, out_df):
 
     return out_df
 
-def main(rast_path, shp_filename):
+def main(rast_path, shp_filename, verbose = True):
     
     out_df = pd.DataFrame()
 
     gtif = list(filter(lambda x: x.endswith(("TIF", "tif", "img", "jp2", "tiff")), os.listdir(rast_path)))
     for gi in gtif:
-        src_rast, pts_crs, out_df, output_path = extract_sr(rast_path, gi, shp_filename, out_df)
+        df = extract_sr(rast_path, gi, shp_filename, out_df, verbose)
 
     out_df.to_excel(os.path.join(rast_path, 'extracted.xlsx'), header = True) 
 
     if os.path.exists(output_path):
         shutil.rmtree(output_path)
         
-rast_path = input('Enter folder path containing raster files: \n')
-shp_filename = input('Enter the shapefile layer [path + filename.shp]: \n')
-df = main(rast_path, shp_filename)
+    return df
